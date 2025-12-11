@@ -18,6 +18,9 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -376,42 +379,111 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-900 text-white pt-16 pb-8">
+    <footer class="bg-dark-900 text-white pt-20 pb-8">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-2">
-                    <img src="../assets/new_logo.png" alt="Maison Remodeling" class="h-12 mb-6">
-                    <p class="text-gray-400 mb-4">Maison Remodeling is a full-service residential remodeling company specializing in high-quality construction, design, and property revitalization.</p>
-                    <div class="space-y-2">
-                        <a href="tel:408-766-7272" class="flex items-center gap-2 text-gray-300 hover:text-primary-400">
-                            <i data-lucide="phone" class="w-4 h-4"></i> 408-766-7272
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <!-- Logo & Contact -->
+                <div class="lg:col-span-2">
+                    <img src="../assets/new_logo.png" alt="Maison Remodeling Group" class="h-12 mb-6">
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Get in Touch</h3>
+                    <div class="space-y-3">
+                        <a href="tel:408-766-7272" class="flex items-center gap-3 text-gray-300 hover:text-primary-400 transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            408-766-7272
                         </a>
-                        <a href="mailto:info@maisonrg.com" class="flex items-center gap-2 text-gray-300 hover:text-primary-400">
-                            <i data-lucide="mail" class="w-4 h-4"></i> info@maisonrg.com
+                        <a href="mailto:info@maisonrg.com" class="flex items-center gap-3 text-gray-300 hover:text-primary-400 transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            info@maisonrg.com
                         </a>
+                        <div class="flex items-start gap-3 text-gray-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 mt-1"></i>
+                            <span>Showroom & Office located at San Jose<br>1580 Oakland Rd, STE C106,<br>San Jose, CA 95131</span>
+                        </div>
+                        <div class="flex items-start gap-3 text-gray-300">
+                            <i data-lucide="clock" class="w-5 h-5 mt-1"></i>
+                            <span>
+                                <strong>Business Hours:</strong><br>
+                                Mon - Fri: 9am - 6pm<br>
+                                Sat, Sun: Closed
+                            </span>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="flex items-center gap-4 mt-4">
+                            <a href="https://www.facebook.com/otbaybuilders" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-400 transition-colors" title="Facebook">
+                                <i class="fa-brands fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="https://www.houzz.com/professionals/general-contractors/ot-bay-builders-pfvwus-pf~1170646081" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-400 transition-colors" title="Houzz">
+                                <i class="fa-brands fa-houzz text-lg"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@OTBayBuilders" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-400 transition-colors" title="YouTube">
+                                <i class="fa-brands fa-youtube text-lg"></i>
+                            </a>
+                            <a href="https://www.instagram.com/otbaybuilders/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-400 transition-colors" title="Instagram">
+                                <i class="fa-brands fa-instagram text-lg"></i>
+                            </a>
+                            <a href="https://www.yelp.ca/biz/ot-bay-builders-san-jose" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-400 transition-colors" title="Yelp">
+                                <i class="fa-brands fa-yelp text-lg"></i>
+                            </a>
+                        </div>
                     </div>
+                    
+
                 </div>
+                
+                <!-- Services -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-primary-400">Services</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Services</h3>
                     <ul class="space-y-2">
-                        <li><a href="../kitchen-remodeling.html" class="text-gray-300 hover:text-primary-400">Kitchen Remodeling</a></li>
-                        <li><a href="../bathroom-remodeling.html" class="text-gray-300 hover:text-primary-400">Bathroom Remodeling</a></li>
-                        <li><a href="../home-remodeling.html" class="text-gray-300 hover:text-primary-400">Home Remodeling</a></li>
-                        <li><a href="../adu.html" class="text-gray-300 hover:text-primary-400">ADU Builders</a></li>
+                        <li><a href="../home-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Home Remodeling</a></li>
+                        <li><a href="../kitchen-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Kitchen Remodeling</a></li>
+                        <li><a href="../bathroom-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Bathroom Remodeling</a></li>
+                        <li><a href="../home-additions.html" class="text-gray-300 hover:text-primary-400 transition-colors">Home Addition</a></li>
+                        <li><a href="../adu.html" class="text-gray-300 hover:text-primary-400 transition-colors">ADU Builders</a></li>
+                        <li><a href="../exterior-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Exterior Remodeling</a></li>
+                        <li><a href="../custom-homes.html" class="text-gray-300 hover:text-primary-400 transition-colors">Custom Homes</a></li>
+                        <li><a href="../commercial-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Commercial Remodeling</a></li>
+                        <li><a href="../design-build.html" class="text-gray-300 hover:text-primary-400 transition-colors">Design Build</a></li>
                     </ul>
                 </div>
+                
+                <!-- Service Areas -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-primary-400">Quick Links</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Service Areas</h3>
                     <ul class="space-y-2">
-                        <li><a href="../about.html" class="text-gray-300 hover:text-primary-400">About Us</a></li>
-                        <li><a href="../projects.html" class="text-gray-300 hover:text-primary-400">Projects</a></li>
-                        <li><a href="../blog.html" class="text-gray-300 hover:text-primary-400">Blog</a></li>
-                        <li><a href="../contact.html" class="text-gray-300 hover:text-primary-400">Contact</a></li>
+                        <li><a href="../locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">San Jose</a></li>
+                        <li><a href="../locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Santa Clara</a></li>
+                        <li><a href="../locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Milpitas</a></li>
+                        <li><a href="../locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Laguna Beach</a></li>
+                        <li><a href="../locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Santa Ana</a></li>
+                        <li><a href="../locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Laguna Woods</a></li>
+                        <li><a href="../locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Villa Park</a></li>
+                        <li><a href="../locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">San Mateo</a></li>
+                        <li><a href="../locations.html" class="text-primary-400 hover:text-primary-300 transition-colors font-medium">More Locations</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../about.html" class="text-gray-300 hover:text-primary-400 transition-colors">About Us</a></li>
+                        <li><a href="../projects.html" class="text-gray-300 hover:text-primary-400 transition-colors">Our Projects</a></li>
+                        <li><a href="../products.html" class="text-gray-300 hover:text-primary-400 transition-colors">Products</a></li>
+                        <li><a href="../blog.html" class="text-gray-300 hover:text-primary-400 transition-colors">Blog</a></li>
+                        <li><a href="../testimonials.html" class="text-gray-300 hover:text-primary-400 transition-colors">Testimonials</a></li>
+                        <li><a href="../contact.html" class="text-gray-300 hover:text-primary-400 transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-                <p>Maison Remodeling &copy; 2025 All Rights Reserved. | License #1097881</p>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">Maison Remodeling Group &copy; 2025 All Rights Reserved. | License #1097881</p>
+                <div class="flex gap-6">
+                    <a href="../privacy-policy.html" class="text-gray-400 text-sm hover:text-primary-400 transition-colors">Privacy Policy</a>
+                    <a href="../terms-of-use.html" class="text-gray-400 text-sm hover:text-primary-400 transition-colors">Terms of Use</a>
+                </div>
             </div>
         </div>
     </footer>
