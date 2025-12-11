@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Cabinets Buyer's Guide | Maison Remodeling</title>
+    <meta name="description" content="Everything you need to know about choosing kitchen cabinets, from materials and construction types to styles, finishes, and budget considerations.">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fdf9ed',
+                            100: '#f9eecd',
+                            200: '#f2db97',
+                            300: '#ebc561',
+                            400: '#e5b03d',
+                            500: '#c9922b',
+                            600: '#a06f22',
+                            700: '#80521f',
+                            800: '#6b4320',
+                            900: '#5c391f',
+                        },
+                        dark: {
+                            900: '#1a1a1a',
+                            800: '#2d2d2d',
+                            700: '#404040',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #c9922b; border-radius: 5px; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #c9922b; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .mobile-menu.active { transform: translateX(0); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Top Bar -->
+    <div class="bg-dark-900 text-white py-2 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-primary-500"></i>
+                Licensed, Bonded & Insured #1097881
+            </span>
+            <a href="tel:408-766-7272" class="flex items-center gap-2 hover:text-primary-400 transition-colors" title="We Answer Fast!">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="../index.html" class="flex items-center gap-3">
+                    <img src="../assets/new_logo.png" alt="Maison Remodeling Group" class="h-12">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="../index.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Home</a>
+                    <a href="../about.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">About</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Services
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="../home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Full Home Remodeling</a>
+                            <a href="../kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="../bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="../home-additions.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Home Additions</a>
+                            <a href="../adu.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">ADU Builders</a>
+                            <a href="../exterior-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Exterior Remodeling</a>
+                            <a href="../custom-homes.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Custom Homes</a>
+                            <a href="../commercial-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Commercial Remodeling</a>
+                            <a href="../design-build.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Design Build</a>
+                        </div>
+                    </div>
+                    
+                    <a href="../products.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Products</a>
+                    
+                    <!-- Projects Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Projects
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="../projects.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">All Projects</a>
+                            <a href="../projects/bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="../projects/kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="../projects/complete-home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Complete Home Remodeling</a>
+                            <a href="../projects/condo-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Condo Remodeling</a>
+                            <a href="../projects/outdoor-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Outdoor Remodeling</a>
+                        </div>
+                    </div>
+                    
+                    <a href="../blog.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Blog</a>
+                    <a href="../contact.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Contact Us</a>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:408-766-7272" class="flex items-center gap-2 px-4 py-2 border-2 border-dark-900 rounded-full text-dark-900 font-medium hover:bg-dark-900 hover:text-white transition-all">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        408-766-7272
+                    </a>
+                    <a href="../contact.html" class="flex items-center gap-2 px-6 py-2 bg-dark-900 text-white rounded-full font-medium hover:bg-primary-600 transition-all group">
+                        <svg class="w-5 h-5 text-primary-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        Book Free Consultation
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-dark-900">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-dark-900 z-50 p-6 lg:hidden">
+        <div class="flex justify-between items-center mb-8">
+            <img src="../assets/new_logo.png" alt="Maison Remodeling" class="h-10">
+            <button id="mobile-menu-close" class="text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="space-y-4">
+            <a href="../index.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home</a>
+            <a href="../about.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">About</a>
+            <a href="../kitchen-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Kitchen Remodeling</a>
+            <a href="../bathroom-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Bathroom Remodeling</a>
+            <a href="../home-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home Remodeling</a>
+            <a href="../adu.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">ADU</a>
+            <a href="../products.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Products</a>
+            <a href="../projects.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Projects</a>
+            <a href="../testimonials.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Testimonials</a>
+            <a href="../blog.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Blog</a>
+            <a href="../contact.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Contact Us</a>
+        </nav>
+        <div class="mt-8">
+            <a href="tel:408-766-7272" class="flex items-center gap-2 text-primary-400 text-lg font-medium">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+
+    <!-- Article Hero -->
+    <section class="relative py-20 bg-dark-900">
+        <div class="absolute inset-0">
+            <img src="../assets/kitchen-grey-cabinets.jpg" alt="Kitchen Cabinets Guide" class="w-full h-full object-cover opacity-30">
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4">
+            <nav class="flex items-center gap-2 text-sm text-gray-400 mb-6">
+                <a href="../index.html" class="hover:text-primary-400 transition-colors">Home</a>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                <a href="../blog.html" class="hover:text-primary-400 transition-colors">Blog</a>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                <span class="text-primary-400">Kitchen Cabinets Guide</span>
+            </nav>
+            <span class="inline-block px-3 py-1 bg-primary-500 text-white text-sm font-semibold rounded-full mb-4">Kitchen Design</span>
+            <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+                Kitchen Cabinets Buyer's Guide
+            </h1>
+            <div class="flex items-center gap-6 text-gray-400">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    December 3, 2025
+                </span>
+                <span class="flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    14 min read
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="prose prose-lg max-w-none">
+                <img src="../assets/kitchen-grey-cabinets.jpg" alt="Modern Kitchen Cabinets" class="w-full h-96 object-cover rounded-2xl mb-8">
+                
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Kitchen cabinets are the foundation of your kitchen's design and functionality. They typically account for 40-50% of a kitchen remodel budget, making them one of the most significant investments in your home. This comprehensive guide will help you navigate the many options available and choose cabinets that match your style, needs, and budget.
+                </p>
+
+                <h2 class="font-display text-3xl font-bold text-dark-900 mt-12 mb-6">Understanding Cabinet Construction</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Cabinet quality starts with construction. Understanding how cabinets are built helps you evaluate options and make informed decisions:
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Framed vs. Frameless Cabinets</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    <strong>Framed cabinets</strong> have a face frame attached to the front of the cabinet box. This traditional American style offers durability and a classic look, but the frame reduces interior space slightly. <strong>Frameless cabinets</strong> (also called European-style) have no face frame, maximizing interior storage space and creating a sleek, modern aesthetic with full-overlay doors.
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Box Construction</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Quality cabinet boxes are built from 3/4-inch thick plywood or furniture-grade particleboard. Look for dovetail or dowel joinery at corners rather than staples or glue alone. The back panel should be at least 1/2-inch thick and dadoed (grooved) into the sides for strength.
+                </p>
+
+                <h2 class="font-display text-3xl font-bold text-dark-900 mt-12 mb-6">Cabinet Material Options</h2>
+                
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Solid Wood</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    The premium choice for cabinet doors and frames. Popular species include maple, cherry, oak, and walnut. Solid wood offers natural beauty, durability, and the ability to be refinished. However, it can expand and contract with humidity changes and is the most expensive option.
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Plywood</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Made from thin wood veneers layered and glued together, plywood offers excellent strength and moisture resistance. It's the preferred material for cabinet boxes in quality kitchens and can also be used for doors with veneer or laminate surfaces.
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">MDF (Medium-Density Fiberboard)</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Engineered wood made from wood fibers bonded with resin. MDF provides a smooth, consistent surface ideal for painted finishes. It's more stable than solid wood and less expensive, but it's heavy and can be damaged by moisture.
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Particleboard</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    The most budget-friendly option, made from wood chips bonded with resin. While adequate for light-duty applications, particleboard is weaker than other options and susceptible to moisture damage. Avoid for cabinet boxes that will hold heavy items.
+                </p>
+
+                <h2 class="font-display text-3xl font-bold text-dark-900 mt-12 mb-6">Cabinet Door Styles</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Door style significantly impacts your kitchen's overall aesthetic:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li><strong>Shaker:</strong> Clean lines with a recessed center panel. The most versatile style, working in traditional to contemporary kitchens</li>
+                    <li><strong>Flat Panel (Slab):</strong> Completely flat with no frame or panel. Ultra-modern and minimalist</li>
+                    <li><strong>Raised Panel:</strong> Center panel is raised above the frame. Traditional and formal appearance</li>
+                    <li><strong>Beadboard:</strong> Vertical grooves in the panel create cottage or country charm</li>
+                    <li><strong>Glass Front:</strong> Glass panels (clear, frosted, or textured) showcase dishware and add visual interest</li>
+                    <li><strong>Louvered:</strong> Horizontal slats provide ventilation and a distinctive look</li>
+                </ul>
+
+                <h2 class="font-display text-3xl font-bold text-dark-900 mt-12 mb-6">Cabinet Finishes</h2>
+                
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Paint</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Painted cabinets offer unlimited color options and a smooth, uniform appearance. White and gray remain popular, but bold colors like navy, forest green, and black are trending. Quality painted finishes require multiple coats and proper curing for durability.
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Stain</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Stained cabinets highlight natural wood grain and warmth. Options range from light natural tones to rich espresso. Stains are protected with clear topcoats that can be matte, satin, or gloss. Wood selection affects how stain appears, with oak showing heavy grain and maple appearing more uniform.
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Laminate</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    High-pressure laminate (HPL) offers durability and easy maintenance at a lower price point. Modern laminates convincingly mimic wood grain, stone, and other materials. They're resistant to stains, moisture, and fading.
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Thermofoil</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    A vinyl film heat-applied to MDF creates a seamless, easy-to-clean surface. Budget-friendly and available in many colors and patterns. However, thermofoil can peel or separate when exposed to high heat near ovens.
+                </p>
+
+                <h2 class="font-display text-3xl font-bold text-dark-900 mt-12 mb-6">Cabinet Categories by Quality</h2>
+                
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Stock Cabinets</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Pre-manufactured in standard sizes and finishes, stock cabinets are the most affordable option ($60-$200 per linear foot). Available immediately from home improvement stores. Limited customization but sufficient for basic kitchen layouts.
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Semi-Custom Cabinets</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Built to order with more size options, finishes, and accessories than stock ($150-$650 per linear foot). Lead times of 4-8 weeks. The best balance of quality, customization, and value for most kitchen remodels.
+                </p>
+
+                <h3 class="font-display text-2xl font-bold text-dark-900 mt-8 mb-4">Custom Cabinets</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Built to exact specifications with unlimited design possibilities ($500-$1,500+ per linear foot). Lead times of 8-16 weeks. Ideal for unique spaces, specific storage needs, or when matching existing millwork.
+                </p>
+
+                <h2 class="font-display text-3xl font-bold text-dark-900 mt-12 mb-6">Essential Cabinet Features</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Modern cabinets offer numerous features that enhance functionality:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li><strong>Soft-close hinges and drawer slides:</strong> Prevent slamming and extend cabinet life</li>
+                    <li><strong>Full-extension drawers:</strong> Provide complete access to drawer contents</li>
+                    <li><strong>Pull-out shelves:</strong> Make base cabinet contents easily accessible</li>
+                    <li><strong>Lazy Susans:</strong> Maximize corner cabinet storage</li>
+                    <li><strong>Drawer dividers:</strong> Organize utensils, spices, and small items</li>
+                    <li><strong>Pull-out trash/recycling:</strong> Hide waste containers elegantly</li>
+                    <li><strong>Appliance garages:</strong> Conceal small appliances on countertops</li>
+                    <li><strong>LED lighting:</strong> Illuminate cabinet interiors and under-cabinet areas</li>
+                </ul>
+
+                <h2 class="font-display text-3xl font-bold text-dark-900 mt-12 mb-6">Hardware Considerations</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Cabinet hardware is like jewelry for your kitchen. Popular finishes include brushed nickel, matte black, brass, and chrome. Consider the balance between knobs (easier to grip, less obtrusive) and pulls (easier to open, more modern). Budget $200-$1,000+ for hardware depending on quality and quantity.
+                </p>
+
+                <div class="bg-primary-50 border-l-4 border-primary-500 p-6 rounded-r-lg my-8">
+                    <h3 class="font-semibold text-dark-900 mb-2">Need Help Choosing Cabinets?</h3>
+                    <p class="text-gray-600 mb-4">Maison Remodeling works with top cabinet manufacturers and can guide you through every decision. Our designers help you select the perfect cabinets for your style, needs, and budget. Contact us for a free consultation.</p>
+                    <a href="../contact.html" class="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700">
+                        Schedule Your Kitchen Consultation <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <h2 class="font-display text-3xl font-bold text-dark-900 mt-12 mb-6">Budget Planning Tips</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    When budgeting for kitchen cabinets, consider these strategies:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                    <li>Invest in quality boxes and hinges; these affect long-term durability most</li>
+                    <li>Use open shelving in some areas to reduce cabinet costs while adding style</li>
+                    <li>Mix cabinet types: stock for basics, semi-custom for visible areas</li>
+                    <li>Consider refacing existing cabinets if boxes are in good condition</li>
+                    <li>Prioritize organization features in high-use areas</li>
+                    <li>Get quotes from multiple sources and understand what's included</li>
+                </ul>
+
+                <h2 class="font-display text-3xl font-bold text-dark-900 mt-12 mb-6">Working with a Professional</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    A professional kitchen designer or remodeling contractor brings expertise that saves money and prevents costly mistakes. They help optimize layout for workflow, ensure proper measurements, coordinate with other trades, and navigate the countless decisions involved in a kitchen remodel. At Maison Remodeling, our design team has relationships with premium cabinet manufacturers, often securing better pricing than retail.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-display text-3xl font-bold text-dark-900 mb-8">Related Articles</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="kitchen-remodeling-trends-2025.html" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="../assets/kitchen-hayward.jpg" alt="Kitchen Trends" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-dark-900 mb-2">Top Kitchen Remodeling Trends for 2025</h3>
+                        <p class="text-gray-600 text-sm">Discover the hottest kitchen design trends transforming homes.</p>
+                    </div>
+                </a>
+                <a href="bathroom-design-ideas.html" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="../assets/bathroom-losaltos-1.jpg" alt="Bathroom Design" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-dark-900 mb-2">15 Stunning Bathroom Design Ideas</h3>
+                        <p class="text-gray-600 text-sm">Transform your bathroom into a spa-like retreat.</p>
+                    </div>
+                </a>
+                <a href="home-remodeling-guide-2025.html" class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="../assets/home-losaltos-5.jpg" alt="Home Remodeling Guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-dark-900 mb-2">The Complete Home Remodeling Guide for 2025</h3>
+                        <p class="text-gray-600 text-sm">Everything you need to know about remodeling your home.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <img src="../assets/new_logo.png" alt="Maison Remodeling" class="h-12 mb-6">
+                    <p class="text-gray-400 mb-4">Maison Remodeling is a full-service residential remodeling company specializing in high-quality construction, design, and property revitalization.</p>
+                    <div class="space-y-2">
+                        <a href="tel:408-766-7272" class="flex items-center gap-2 text-gray-300 hover:text-primary-400">
+                            <i data-lucide="phone" class="w-4 h-4"></i> 408-766-7272
+                        </a>
+                        <a href="mailto:info@maisonrg.com" class="flex items-center gap-2 text-gray-300 hover:text-primary-400">
+                            <i data-lucide="mail" class="w-4 h-4"></i> info@maisonrg.com
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-primary-400">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../kitchen-remodeling.html" class="text-gray-300 hover:text-primary-400">Kitchen Remodeling</a></li>
+                        <li><a href="../bathroom-remodeling.html" class="text-gray-300 hover:text-primary-400">Bathroom Remodeling</a></li>
+                        <li><a href="../home-remodeling.html" class="text-gray-300 hover:text-primary-400">Home Remodeling</a></li>
+                        <li><a href="../adu.html" class="text-gray-300 hover:text-primary-400">ADU Builders</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-primary-400">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../about.html" class="text-gray-300 hover:text-primary-400">About Us</a></li>
+                        <li><a href="../projects.html" class="text-gray-300 hover:text-primary-400">Projects</a></li>
+                        <li><a href="../blog.html" class="text-gray-300 hover:text-primary-400">Blog</a></li>
+                        <li><a href="../contact.html" class="text-gray-300 hover:text-primary-400">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>Maison Remodeling &copy; 2025 All Rights Reserved. | License #1097881</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
+        mobileMenuClose.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+    </script>
+</body>
+</html>

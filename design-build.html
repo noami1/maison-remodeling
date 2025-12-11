@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Build Services San Jose | Maison Remodeling Group</title>
+    <meta name="description" content="Streamlined design-build services in San Jose. One team handles design, permits, and construction for your remodel. Architectural design, 3D visualization & more.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#fdf9ed', 100: '#f9eecd', 200: '#f2db97', 300: '#ebc561', 400: '#e5b03d', 500: '#c9922b', 600: '#a06f22', 700: '#80521f', 800: '#6b4320', 900: '#5c391f' },
+                        dark: { 900: '#1a1a1a', 800: '#2d2d2d', 700: '#404040' }
+                    },
+                    fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #c9922b; border-radius: 5px; }
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #c9922b; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .mobile-menu.active { transform: translateX(0); }
+        .img-zoom { overflow: hidden; }
+        .img-zoom img { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+        .img-zoom:hover img { transform: scale(1.1); }
+        .service-feature { transition: all 0.3s ease; }
+        .service-feature:hover { transform: translateX(10px); }
+        .gallery-item { transition: all 0.5s ease; }
+        .gallery-item:hover { transform: scale(1.02); }
+        .comparison-card { transition: all 0.3s ease; }
+        .comparison-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Top Bar -->
+    <div class="bg-dark-900 text-white py-2 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-primary-500"></i>
+                Licensed, Bonded & Insured #1097881
+            </span>
+            <a href="tel:408-766-7272" class="flex items-center gap-2 hover:text-primary-400 transition-colors" title="We Answer Fast!">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/new_logo.png" alt="Maison Remodeling Group" class="h-12">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Home</a>
+                    <a href="about.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">About</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Services
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Full Home Remodeling</a>
+                            <a href="kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="home-additions.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Home Additions</a>
+                            <a href="adu.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">ADU Builders</a>
+                            <a href="exterior-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Exterior Remodeling</a>
+                            <a href="custom-homes.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Custom Homes</a>
+                            <a href="commercial-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Commercial Remodeling</a>
+                            <a href="design-build.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Design Build</a>
+                        </div>
+                    </div>
+                    
+                    <a href="products.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Products</a>
+                    
+                    <!-- Projects Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Projects
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="projects.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">All Projects</a>
+                            <a href="projects/bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="projects/kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="projects/complete-home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Complete Home Remodeling</a>
+                            <a href="projects/condo-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Condo Remodeling</a>
+                            <a href="projects/outdoor-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Outdoor Remodeling</a>
+                        </div>
+                    </div>
+                    
+                    <a href="blog.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Blog</a>
+                    <a href="contact.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Contact Us</a>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:408-766-7272" class="flex items-center gap-2 px-4 py-2 border-2 border-dark-900 rounded-full text-dark-900 font-medium hover:bg-dark-900 hover:text-white transition-all">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        408-766-7272
+                    </a>
+                    <a href="contact.html" class="flex items-center gap-2 px-6 py-2 bg-dark-900 text-white rounded-full font-medium hover:bg-primary-600 transition-all group">
+                        <svg class="w-5 h-5 text-primary-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        Book Free Consultation
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-dark-900">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-dark-900 z-50 p-6 lg:hidden">
+        <div class="flex justify-between items-center mb-8">
+            <img src="assets/new_logo.png" alt="Maison Remodeling" class="h-10">
+            <button id="mobile-menu-close" class="text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="space-y-4">
+            <a href="index.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home</a>
+            <a href="about.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">About</a>
+            <a href="kitchen-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Kitchen Remodeling</a>
+            <a href="bathroom-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Bathroom Remodeling</a>
+            <a href="home-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home Remodeling</a>
+            <a href="adu.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">ADU</a>
+            <a href="products.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Products</a>
+            <a href="projects.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Projects</a>
+            <a href="testimonials.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Testimonials</a>
+            <a href="blog.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Blog</a>
+            <a href="contact.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Contact Us</a>
+        </nav>
+        <div class="mt-8">
+            <a href="tel:408-766-7272" class="flex items-center gap-2 text-primary-400 text-lg font-medium">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+    </section>
+    
+    <!-- Services List -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark-900 mb-4">Our Design-Build Services</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Comprehensive services that take your project from dream to reality.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="reveal bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                        <i data-lucide="pencil-ruler" class="w-7 h-7 text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-900 mb-3">Architectural Design</h3>
+                    <p class="text-gray-600">Custom architectural plans created by our in-house designers who understand both aesthetics and construction realities.</p>
+                </div>
+                
+                <div class="reveal bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all" style="animation-delay: 0.1s">
+                    <div class="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                        <i data-lucide="box" class="w-7 h-7 text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-900 mb-3">3D Visualization</h3>
+                    <p class="text-gray-600">Photorealistic 3D renderings let you experience your new space before construction begins, making decisions easier and more confident.</p>
+                </div>
+                
+                <div class="reveal bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all" style="animation-delay: 0.2s">
+                    <div class="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                        <i data-lucide="clipboard-list" class="w-7 h-7 text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-900 mb-3">Project Management</h3>
+                    <p class="text-gray-600">Dedicated project managers coordinate every detail, keeping your project on schedule, on budget, and stress-free.</p>
+                </div>
+                
+                <div class="reveal bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all" style="animation-delay: 0.3s">
+                    <div class="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                        <i data-lucide="hard-hat" class="w-7 h-7 text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-900 mb-3">Construction</h3>
+                    <p class="text-gray-600">Expert construction teams execute the design with precision craftsmanship and attention to every detail.</p>
+                </div>
+                
+                <div class="reveal bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all" style="animation-delay: 0.4s">
+                    <div class="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                        <i data-lucide="palette" class="w-7 h-7 text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-900 mb-3">Interior Design</h3>
+                    <p class="text-gray-600">Complete interior design services including material selection, color palettes, fixtures, and finishing touches.</p>
+                </div>
+                
+                <div class="reveal bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all" style="animation-delay: 0.5s">
+                    <div class="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                        <i data-lucide="file-check" class="w-7 h-7 text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-900 mb-3">Permit Management</h3>
+                    <p class="text-gray-600">We handle all permit applications, submissions, and inspections, navigating San Jose's building requirements for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Comparison Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark-900 mb-4">Design-Build vs. Traditional Method</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">See why more homeowners are choosing the design-build approach.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="reveal comparison-card bg-primary-50 rounded-2xl p-8 border-2 border-primary-200">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center">
+                            <i data-lucide="check" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-dark-900">Design-Build</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-700">Single point of contact throughout project</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-700">Designers and builders collaborate from day one</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-700">Accurate budgets established early</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-700">Faster project completion</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-700">Streamlined communication</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-700">Single contract and warranty</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="reveal comparison-card bg-gray-50 rounded-2xl p-8 border-2 border-gray-200" style="animation-delay: 0.1s">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gray-400 flex items-center justify-center">
+                            <i data-lucide="x" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-dark-900">Traditional Method</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-600">Multiple parties to manage and coordinate</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-600">Designers create plans without builder input</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-600">Budget surprises during construction</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-600">Longer timelines due to sequential phases</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-600">Miscommunication between parties</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-600">Multiple contracts and liability questions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="py-20 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Our Design-Build Process</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">A streamlined journey from your initial vision to move-in day.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="reveal text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-500 flex items-center justify-center text-2xl font-display font-bold text-white">1</div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Discovery</h3>
+                    <p class="text-gray-400 text-sm">We listen to your goals, assess your space, and establish a realistic budget range</p>
+                </div>
+                <div class="reveal text-center" style="animation-delay: 0.1s">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-500 flex items-center justify-center text-2xl font-display font-bold text-white">2</div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Design</h3>
+                    <p class="text-gray-400 text-sm">Our designers create plans and 3D renderings with builder input from day one</p>
+                </div>
+                <div class="reveal text-center" style="animation-delay: 0.2s">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-500 flex items-center justify-center text-2xl font-display font-bold text-white">3</div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Build</h3>
+                    <p class="text-gray-400 text-sm">Expert craftsmen bring your design to life with quality materials and techniques</p>
+                </div>
+                <div class="reveal text-center" style="animation-delay: 0.3s">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-500 flex items-center justify-center text-2xl font-display font-bold text-white">4</div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Enjoy</h3>
+                    <p class="text-gray-400 text-sm">Final walkthrough, quality check, and handover of your beautiful new space</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark-900 mb-4">Design-Build Projects</h2>
+                <p class="text-gray-600 text-lg">See what's possible when design and construction work together.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item reveal img-zoom rounded-2xl overflow-hidden shadow-lg">
+                    <img src="assets/kitchen-modern.jpg" alt="Design Build Project" class="w-full h-72 object-cover">
+                </div>
+                <div class="gallery-item reveal img-zoom rounded-2xl overflow-hidden shadow-lg" style="animation-delay: 0.1s">
+                    <img src="assets/home-losaltos-1.jpg" alt="Design Build Project" class="w-full h-72 object-cover">
+                </div>
+                <div class="gallery-item reveal img-zoom rounded-2xl overflow-hidden shadow-lg" style="animation-delay: 0.2s">
+                    <img src="assets/bathroom-losaltos-1.jpg" alt="Design Build Project" class="w-full h-72 object-cover">
+                </div>
+                <div class="gallery-item reveal img-zoom rounded-2xl overflow-hidden shadow-lg" style="animation-delay: 0.3s">
+                    <img src="assets/home-losgatos.jpg" alt="Design Build Project" class="w-full h-72 object-cover">
+                </div>
+                <div class="gallery-item reveal img-zoom rounded-2xl overflow-hidden shadow-lg" style="animation-delay: 0.4s">
+                    <img src="assets/kitchen-campbell.jpg" alt="Design Build Project" class="w-full h-72 object-cover">
+                </div>
+                <a href="projects.html" class="gallery-item reveal flex items-center justify-center bg-primary-50 rounded-2xl h-72 group hover:bg-primary-100 transition-colors" style="animation-delay: 0.5s">
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-primary-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="arrow-right" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="text-lg font-semibold text-primary-600">View All Projects</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark-900 mb-4">Design-Build FAQ</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="reveal bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-dark-900 hover:bg-gray-50">
+                        What exactly is design-build?
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Design-build is a project delivery method where a single company provides both design services (architectural plans, interior design) and construction services. Instead of hiring an architect and contractor separately, you work with one integrated team that handles everything from initial concept through final construction. This creates a more streamlined, efficient, and collaborative process.</p>
+                    </div>
+                </div>
+                
+                <div class="reveal bg-white rounded-xl shadow-md overflow-hidden" style="animation-delay: 0.1s">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-dark-900 hover:bg-gray-50">
+                        Is design-build more expensive than traditional remodeling?
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Design-build is often more cost-effective because budgets are established early with builder input, reducing costly mid-project changes. You also save money by avoiding separate fees for architects and contractors, and projects typically finish faster, reducing labor costs. Studies show design-build projects are completed 33% faster and cost 6% less on average than traditional methods.</p>
+                    </div>
+                </div>
+                
+                <div class="reveal bg-white rounded-xl shadow-md overflow-hidden" style="animation-delay: 0.2s">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-dark-900 hover:bg-gray-50">
+                        Do I have less design flexibility with design-build?
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Not at all. Our in-house designers create fully custom designs tailored to your vision and needs. The difference is that they collaborate with our construction team from the start, ensuring your design is not only beautiful but also buildable and cost-effective. You get the same creative freedom with better practical guidance.</p>
+                    </div>
+                </div>
+                
+                <div class="reveal bg-white rounded-xl shadow-md overflow-hidden" style="animation-delay: 0.3s">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-dark-900 hover:bg-gray-50">
+                        How does the design-build process begin?
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">It starts with a free consultation where we discuss your goals, assess your space, and understand your budget expectations. From there, we create a design proposal with preliminary concepts and cost estimates. Once you approve the direction, we develop detailed plans, 3D renderings, and a fixed-price contract before any construction begins.</p>
+                    </div>
+                </div>
+                
+                <div class="reveal bg-white rounded-xl shadow-md overflow-hidden" style="animation-delay: 0.4s">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-dark-900 hover:bg-gray-50">
+                        What if I already have architectural plans?
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">We're happy to work with existing plans! We can review your architect's designs, provide feedback on constructability and costs, and handle the construction phase. However, many clients find that our design-build approach from the start leads to better outcomes since design and construction are integrated from day one.</p>
+                    </div>
+                </div>
+                
+                <div class="reveal bg-white rounded-xl shadow-md overflow-hidden" style="animation-delay: 0.5s">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-dark-900 hover:bg-gray-50">
+                        How do I know if design-build is right for my project?
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Design-build works well for most residential remodeling projects, from kitchen and bathroom renovations to whole-home remodels and additions. It's especially valuable when you want a streamlined experience, value clear communication, and prefer working with a single team accountable for both design and construction. Schedule a consultation to discuss whether it's the right fit for your specific project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-24 bg-primary-500">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="reveal font-display text-4xl md:text-5xl font-bold text-white mb-6">Ready for a Better Remodeling Experience?</h2>
+            <p class="reveal text-white/90 text-lg mb-10">Discover the design-build difference with a free consultation.</p>
+            <div class="reveal flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-dark-900 rounded-full text-lg font-semibold hover:bg-dark-900 hover:text-white transition-all">Get a Free Estimate</a>
+                <a href="tel:408-766-7272" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-lg font-semibold hover:bg-white hover:text-dark-900 transition-all">
+                    <i data-lucide="phone" class="w-5 h-5"></i>Call 408-766-7272
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <img src="assets/new_logo.png" alt="Maison Remodeling Group" class="h-12 mb-6">
+                    <div class="space-y-3">
+                        <a href="tel:408-766-7272" class="flex items-center gap-3 text-gray-300 hover:text-primary-400"><i data-lucide="phone" class="w-5 h-5"></i>408-766-7272</a>
+                        <a href="mailto:info@maisonrg.com" class="flex items-center gap-3 text-gray-300 hover:text-primary-400"><i data-lucide="mail" class="w-5 h-5"></i>info@maisonrg.com</a>
+                        <div class="flex items-start gap-3 text-gray-300"><i data-lucide="map-pin" class="w-5 h-5 mt-1"></i><span>1580 Oakland Rd, STE C106,<br>San Jose, CA 95131</span></div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home-remodeling.html" class="text-gray-300 hover:text-primary-400">Home Remodeling</a></li>
+                        <li><a href="kitchen-remodeling.html" class="text-gray-300 hover:text-primary-400">Kitchen Remodeling</a></li>
+                        <li><a href="bathroom-remodeling.html" class="text-gray-300 hover:text-primary-400">Bathroom Remodeling</a></li>
+                        <li><a href="home-additions.html" class="text-gray-300 hover:text-primary-400">Home Addition</a></li>
+                        <li><a href="adu.html" class="text-gray-300 hover:text-primary-400">ADU Builders</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Service Areas</h3>
+                    <ul class="space-y-2">
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400">San Jose</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400">Santa Clara</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400">Milpitas</a></li>
+                        <li><a href="locations.html" class="text-primary-400 font-medium">More Locations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Newsletter</h3>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your Email*" class="w-full px-4 py-3 bg-dark-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        <button type="submit" class="w-full px-4 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">Maison Remodeling Group &copy; 2025 All Rights Reserved. | License #1097881</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="text-gray-400 text-sm hover:text-primary-400">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="text-gray-400 text-sm hover:text-primary-400">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        lucide.createIcons();
+        
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.add('active'));
+        document.getElementById('mobile-menu-close').addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('active'));
+        
+        // Reveal animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                content.classList.toggle('hidden');
+                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+    </script>
+</body>
+</html>

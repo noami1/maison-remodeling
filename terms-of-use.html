@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | Maison Remodeling Group - Home Remodeling San Jose</title>
+    <meta name="description" content="Terms of Use for Maison Remodeling Group website. Please read these terms carefully before using our website.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fdf9ed',
+                            100: '#f9eecd',
+                            200: '#f2db97',
+                            300: '#ebc561',
+                            400: '#e5b03d',
+                            500: '#c9922b',
+                            600: '#a06f22',
+                            700: '#80521f',
+                            800: '#6b4320',
+                            900: '#5c391f',
+                        },
+                        dark: {
+                            900: '#1a1a1a',
+                            800: '#2d2d2d',
+                            700: '#404040',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #c9922b; border-radius: 5px; }
+        
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #c9922b; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        
+        .dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        
+        .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .mobile-menu.active { transform: translateX(0); }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Top Bar -->
+    <div class="bg-dark-900 text-white py-2 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-primary-500"></i>
+                Licensed, Bonded & Insured #1097881
+            </span>
+            <a href="tel:408-766-7272" class="flex items-center gap-2 hover:text-primary-400 transition-colors" title="We Answer Fast!">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/new_logo.png" alt="Maison Remodeling Group" class="h-12">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Home</a>
+                    <a href="about.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">About</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Services
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Full Home Remodeling</a>
+                            <a href="kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="home-additions.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Home Additions</a>
+                            <a href="adu.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">ADU Builders</a>
+                            <a href="exterior-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Exterior Remodeling</a>
+                            <a href="custom-homes.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Custom Homes</a>
+                            <a href="commercial-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Commercial Remodeling</a>
+                            <a href="design-build.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Design Build</a>
+                        </div>
+                    </div>
+                    
+                    <a href="products.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Products</a>
+                    
+                    <!-- Projects Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Projects
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="projects.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">All Projects</a>
+                            <a href="projects/bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="projects/kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="projects/complete-home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Complete Home Remodeling</a>
+                            <a href="projects/condo-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Condo Remodeling</a>
+                            <a href="projects/outdoor-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Outdoor Remodeling</a>
+                        </div>
+                    </div>
+                    
+                    <a href="blog.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Blog</a>
+                    <a href="contact.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Contact Us</a>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:408-766-7272" class="flex items-center gap-2 px-4 py-2 border-2 border-dark-900 rounded-full text-dark-900 font-medium hover:bg-dark-900 hover:text-white transition-all">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        408-766-7272
+                    </a>
+                    <a href="contact.html" class="flex items-center gap-2 px-6 py-2 bg-dark-900 text-white rounded-full font-medium hover:bg-primary-600 transition-all group">
+                        <svg class="w-5 h-5 text-primary-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        Book Free Consultation
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-dark-900">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-dark-900 z-50 p-6 lg:hidden">
+        <div class="flex justify-between items-center mb-8">
+            <img src="assets/new_logo.png" alt="Maison Remodeling" class="h-10">
+            <button id="mobile-menu-close" class="text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="space-y-4">
+            <a href="index.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home</a>
+            <a href="about.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">About</a>
+            <a href="kitchen-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Kitchen Remodeling</a>
+            <a href="bathroom-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Bathroom Remodeling</a>
+            <a href="home-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home Remodeling</a>
+            <a href="adu.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">ADU</a>
+            <a href="products.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Products</a>
+            <a href="projects.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Projects</a>
+            <a href="testimonials.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Testimonials</a>
+            <a href="blog.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Blog</a>
+            <a href="contact.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Contact Us</a>
+        </nav>
+        <div class="mt-8">
+            <a href="tel:408-766-7272" class="flex items-center gap-2 text-primary-400 text-lg font-medium">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <img src="assets/new_logo.png" alt="Maison Remodeling Group" class="h-12 mb-6">
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Get in Touch</h3>
+                    <div class="space-y-3">
+                        <a href="tel:408-766-7272" class="flex items-center gap-3 text-gray-300 hover:text-primary-400 transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5"></i>408-766-7272
+                        </a>
+                        <a href="mailto:info@maisonrg.com" class="flex items-center gap-3 text-gray-300 hover:text-primary-400 transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>info@maisonrg.com
+                        </a>
+                        <div class="flex items-start gap-3 text-gray-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 mt-1"></i>
+                            <span>1580 Oakland Rd, STE C106,<br>San Jose, CA 95131</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Home Remodeling</a></li>
+                        <li><a href="kitchen-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Kitchen Remodeling</a></li>
+                        <li><a href="bathroom-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Bathroom Remodeling</a></li>
+                        <li><a href="home-additions.html" class="text-gray-300 hover:text-primary-400 transition-colors">Home Addition</a></li>
+                        <li><a href="adu.html" class="text-gray-300 hover:text-primary-400 transition-colors">ADU Builders</a></li>
+                        <li><a href="custom-homes.html" class="text-gray-300 hover:text-primary-400 transition-colors">Custom Homes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Service Areas</h3>
+                    <ul class="space-y-2">
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">San Jose</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Santa Clara</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Milpitas</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">San Mateo</a></li>
+                        <li><a href="locations.html" class="text-primary-400 hover:text-primary-300 transition-colors font-medium">More Locations</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Newsletter</h3>
+                    <p class="text-gray-400 text-sm mb-4">Get the latest updates & news</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your Email*" class="w-full px-4 py-3 bg-dark-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        <button type="submit" class="w-full px-4 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">Maison Remodeling Group &copy; 2025 All Rights Reserved. | License #1097881</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="text-gray-400 text-sm hover:text-primary-400 transition-colors">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="text-primary-400 text-sm hover:text-primary-300 transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        lucide.createIcons();
+        
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
+        mobileMenuClose.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        
+        // Reveal animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>

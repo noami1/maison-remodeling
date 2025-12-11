@@ -1,0 +1,121 @@
+# Maison Remodeling Website
+
+> This is a website for Maison Remodeling, a full-service residential remodeling and renovation company.
+
+## Company Information
+
+- **Company Name**: Maison Remodeling
+- **Phone**: 408-766-7272
+- **Email**: info@maisonrg.com
+- **Address**: 1580 Oakland Rd, STE C106, San Jose, CA 95131
+- **License**: #1097881
+
+## Business Description
+
+Maison Remodeling is a full-service residential remodeling and renovation company specializing in high-quality construction, design, and property revitalization. We help homeowners, investors, and real estate professionals transform outdated or damaged properties into modern, functional, and high-value homes.
+
+Our services include complete home renovations, kitchen and bathroom remodeling, flooring, painting, carpentry, structural upgrades, project management, and post-project warranty follow-ups. We handle every phase—from initial planning and budgeting to execution and final walkthrough—ensuring a smooth, transparent, and professional experience.
+
+## Services Offered
+
+- Full Home Remodeling
+- Kitchen Remodeling
+- Bathroom Remodeling
+- Home Additions
+- ADU (Accessory Dwelling Unit) Construction
+- Exterior Remodeling
+- Custom Homes
+- Commercial Remodeling
+- Design Build
+
+## Website Structure
+
+### Main Pages
+- index.html - Homepage
+- about.html - About the company
+- contact.html - Contact form and information
+- products.html - Product partners (cabinets, tiles, countertops)
+- blog.html - Blog index
+- testimonials.html - Client reviews
+- locations.html - Service areas
+- privacy-policy.html - Privacy policy
+- terms-of-use.html - Terms of use
+
+### Service Pages
+- kitchen-remodeling.html
+- bathroom-remodeling.html
+- home-remodeling.html
+- home-additions.html
+- adu.html
+- exterior-remodeling.html
+- custom-homes.html
+- commercial-remodeling.html
+- design-build.html
+
+### Project Gallery (projects/)
+- projects/kitchen-remodeling.html
+- projects/bathroom-remodeling.html
+- projects/complete-home-remodeling.html
+- projects/condo-remodeling.html
+- projects/outdoor-remodeling.html
+
+### Blog Posts (blog/)
+- blog/home-remodeling-guide-2025.html
+- blog/kitchen-remodeling-trends-2025.html
+- blog/bathroom-design-ideas.html
+- blog/adu-building-guide.html
+- blog/kitchen-cabinets-guide.html
+- blog/home-addition-ideas.html
+
+## Technical Stack
+
+- HTML5
+- Tailwind CSS (CDN)
+- JavaScript (embedded)
+- Three.js (CDN) - for homepage particle animation
+- Lucide Icons (CDN)
+- GSAP (CDN) - for scroll animations
+- Google Fonts (Playfair Display, Inter)
+
+## Service Areas
+
+### Bay Area
+- San Jose
+- Santa Clara
+- Milpitas
+- Sunnyvale
+- Cupertino
+- Mountain View
+- Palo Alto
+- Los Altos
+- Saratoga
+- Campbell
+- Los Gatos
+- Fremont
+- Newark
+- San Mateo
+- Redwood City
+- Menlo Park
+- Hayward
+
+### Orange County
+- Laguna Beach
+- Santa Ana
+- Laguna Woods
+- Villa Park
+- Irvine
+- Newport Beach
+
+## Key Features
+
+- Responsive design (mobile-first)
+- Scroll reveal animations
+- Interactive navigation with dropdowns
+- Contact form with validation
+- Google Maps integration
+- Project galleries with image hover effects
+- Blog with categorized articles
+
+## Assets
+
+All images are stored in the /assets directory. The company logo is new_logo.png.

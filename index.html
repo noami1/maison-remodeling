@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Remodeling San Jose | Maison Remodeling Group</title>
+    <meta name="description" content="Maison Remodeling Group is a licensed, insured remodeling company serving the Bay Area and Orange County. Kitchen, bathroom, home additions, ADU, and custom homes.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- LocalBusiness Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Maison Remodeling Group",
+        "image": "https://maisonrg.com/assets/new_logo.png",
+        "url": "https://maisonrg.com",
+        "telephone": "408-766-7272",
+        "email": "info@maisonrg.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1580 Oakland Rd, STE C106",
+            "addressLocality": "San Jose",
+            "addressRegion": "CA",
+            "postalCode": "95131",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 37.3809,
+            "longitude": -121.8923
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "20"
+        },
+        "priceRange": "$$$$",
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "San Jose"
+            },
+            {
+                "@type": "City",
+                "name": "Santa Clara"
+            },
+            {
+                "@type": "City",
+                "name": "Milpitas"
+            },
+            {
+                "@type": "City",
+                "name": "Laguna Beach"
+            }
+        ],
+        "sameAs": [],
+        "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Contractor License",
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "California Contractors State License Board"
+            },
+            "validIn": {
+                "@type": "AdministrativeArea",
+                "name": "California"
+            }
+        }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fdf9ed',
+                            100: '#f9eecd',
+                            200: '#f2db97',
+                            300: '#ebc561',
+                            400: '#e5b03d',
+                            500: '#c9922b',
+                            600: '#a06f22',
+                            700: '#80521f',
+                            800: '#6b4320',
+                            900: '#5c391f',
+                        },
+                        dark: {
+                            900: '#1a1a1a',
+                            800: '#2d2d2d',
+                            700: '#404040',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #c9922b;
+            border-radius: 5px;
+        }
+        
+        /* Hero background animation */
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(26, 26, 26, 0.7) 50%, rgba(26, 26, 26, 0.6) 100%);
+        }
+        
+        /* Hero content entrance animations */
+        .hero-text-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroTextReveal 1s ease forwards;
+        }
+        
+        .hero-text-animate:nth-child(1) { animation-delay: 0.5s; }
+        .hero-text-animate:nth-child(2) { animation-delay: 0.7s; }
+        .hero-text-animate:nth-child(3) { animation-delay: 0.9s; }
+        .hero-text-animate:nth-child(4) { animation-delay: 1.1s; }
+        
+        @keyframes heroTextReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Animated gradient border */
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(90deg, #c9922b, #e5b03d, #c9922b);
+            background-size: 200% 100%;
+            animation: gradientMove 3s ease infinite;
+        }
+        
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Floating animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Card hover effects */
+        .service-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(201, 146, 43, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        /* Image zoom effect */
+        .img-zoom {
+            overflow: hidden;
+        }
+        
+        .img-zoom img {
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .img-zoom:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Magnetic button effect */
+        .magnetic-btn {
+            transition: transform 0.3s ease;
+        }
+        
+        /* Text reveal animation */
+        .text-reveal {
+            overflow: hidden;
+        }
+        
+        .text-reveal span {
+            display: inline-block;
+            transform: translateY(100%);
+            animation: textReveal 0.8s forwards;
+        }
+        
+        @keyframes textReveal {
+            to { transform: translateY(0); }
+        }
+        
+        /* Parallax sections */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Counter animation */
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Feature icons - white color */
+        .feature-icon {
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Infinite scrolling logo carousel */
+        .logo-carousel {
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        
+        .logo-carousel-track {
+            display: flex;
+            animation: scrollLogos 20s linear infinite;
+            width: max-content;
+        }
+        
+        .logo-carousel-track:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Navigation */
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c9922b;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Dropdown menu */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        /* Testimonial cards */
+        .testimonial-card {
+            transition: all 0.5s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Process timeline */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(180deg, #c9922b, transparent);
+        }
+        
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Particle canvas */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* Smooth image loading */
+        .lazy-img {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .lazy-img.loaded {
+            opacity: 1;
+        }
+        
+        /* Logo icon styling */
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #c9922b 0%, #e5b03d 100%);
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L95 27.5 L95 72.5 L50 95 L5 72.5 L5 27.5 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L95 27.5 L95 72.5 L50 95 L5 72.5 L5 27.5 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Top Bar -->
+    <div class="bg-dark-900 text-white py-2 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-primary-500"></i>
+                Licensed, Bonded & Insured #1097881
+            </span>
+            <a href="tel:408-766-7272" class="flex items-center gap-2 hover:text-primary-400 transition-colors" title="We Answer Fast!">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/new_logo.png" alt="Maison Remodeling Group" class="h-12">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Home</a>
+                    <a href="about.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">About</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Services
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Full Home Remodeling</a>
+                            <a href="kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="home-additions.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Home Additions</a>
+                            <a href="adu.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">ADU Builders</a>
+                            <a href="exterior-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Exterior Remodeling</a>
+                            <a href="custom-homes.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Custom Homes</a>
+                            <a href="commercial-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Commercial Remodeling</a>
+                            <a href="design-build.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Design Build</a>
+                        </div>
+                    </div>
+                    
+                    <a href="products.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Products</a>
+                    
+                    <!-- Projects Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Projects
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="projects.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">All Projects</a>
+                            <a href="projects/bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="projects/kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="projects/complete-home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Complete Home Remodeling</a>
+                            <a href="projects/condo-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Condo Remodeling</a>
+                            <a href="projects/outdoor-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Outdoor Remodeling</a>
+                        </div>
+                    </div>
+                    
+                    <a href="blog.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Blog</a>
+                    <a href="contact.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Contact Us</a>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:408-766-7272" class="flex items-center gap-2 px-4 py-2 border-2 border-dark-900 rounded-full text-dark-900 font-medium hover:bg-dark-900 hover:text-white transition-all">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        408-766-7272
+                    </a>
+                    <a href="contact.html" class="flex items-center gap-2 px-6 py-2 bg-dark-900 text-white rounded-full font-medium hover:bg-primary-600 transition-all group">
+                        <svg class="w-5 h-5 text-primary-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        Book Free Consultation
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-dark-900">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-dark-900 z-50 p-6 lg:hidden">
+        <div class="flex justify-between items-center mb-8">
+            <img src="assets/new_logo.png" alt="Maison Remodeling" class="h-10">
+            <button id="mobile-menu-close" class="text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="space-y-4">
+            <a href="index.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home</a>
+            <a href="about.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">About</a>
+            <a href="kitchen-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Kitchen Remodeling</a>
+            <a href="bathroom-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Bathroom Remodeling</a>
+            <a href="home-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home Remodeling</a>
+            <a href="adu.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">ADU</a>
+            <a href="products.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Products</a>
+            <a href="projects.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Projects</a>
+            <a href="testimonials.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Testimonials</a>
+            <a href="blog.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Blog</a>
+            <a href="contact.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Contact Us</a>
+        </nav>
+        <div class="mt-8">
+            <a href="tel:408-766-7272" class="flex items-center gap-2 text-primary-400 text-lg font-medium">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+        <!-- Three.js Canvas -->
+        <canvas id="hero-canvas"></canvas>
+        
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="assets/kitchen-hayward.jpg" alt="Modern Kitchen Interior" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 w-full">
+            <div class="max-w-3xl">
+                <div class="hero-text-animate mb-6">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/20 backdrop-blur-sm rounded-full text-primary-400 text-sm font-medium border border-primary-500/30">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        Top-Rated Home Remodeling in Bay Area & Orange County
+                    </span>
+                </div>
+                <h1 class="hero-text-animate font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    Transform Your <span class="text-primary-400">Home</span> Into Your Dream Space
+                </h1>
+                <p class="hero-text-animate text-gray-300 text-lg md:text-xl mb-10 max-w-2xl">
+                    From stunning kitchens to luxurious bathrooms, we bring your vision to life with expert craftsmanship and attention to detail. Proudly serving the Bay Area (Silicon Valley) and Orange County.
+                </p>
+                <div class="hero-text-animate flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html" class="magnetic-btn inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-500 text-white rounded-full text-lg font-semibold hover:bg-primary-600 transition-all group">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        Get a Free Estimate
+                    </a>
+                    <a href="projects.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white rounded-full text-lg font-semibold hover:bg-white hover:text-dark-900 transition-all">
+                        View Our Work
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <!-- Trust Badges -->
+                <div class="hero-text-animate flex flex-wrap items-center gap-4 mt-8 text-sm text-gray-300">
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-primary-400"></i>
+                        Licensed #1097881
+                    </span>
+                    <span class="hidden sm:inline text-gray-500">|</span>
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        5.0 Google Rating
+                    </span>
+                    <span class="hidden sm:inline text-gray-500">|</span>
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-primary-400"></i>
+                        Bay Area & Orange County
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/60">
+            <span class="text-sm mb-2">Scroll to explore</span>
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                <div class="w-1.5 h-3 bg-primary-400 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Bar -->
+    <section class="relative bg-dark-800/95">
+        <div class="absolute inset-0">
+            <img src="assets/kitchen-sanjose.jpg" alt="" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center text-white">
+                <!-- Feature 1 -->
+                <div class="flex flex-col items-center">
+                    <img src="assets/icon-estimates.svg" alt="Free Estimates" class="w-12 h-12 mb-4 feature-icon">
+                    <h3 class="font-semibold text-lg mb-1">Free Estimates</h3>
+                    <h4 class="text-primary-400 text-sm mb-2">& Transparent Pricing</h4>
+                    <p class="text-gray-400 text-sm">No surprises, just honest quotes.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="flex flex-col items-center">
+                    <img src="assets/icon-updates.svg" alt="Daily Updates" class="w-12 h-12 mb-4 feature-icon">
+                    <h3 class="font-semibold text-lg mb-1">Daily Updates</h3>
+                    <h4 class="text-primary-400 text-sm mb-2">& Clear Communication</h4>
+                    <p class="text-gray-400 text-sm">Stay informed at every stage through our Client Portal system.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="flex flex-col items-center">
+                    <img src="assets/icon-licensed.svg" alt="Licensed" class="w-12 h-12 mb-4 feature-icon">
+                    <h3 class="font-semibold text-lg mb-1">Licensed, Bonded</h3>
+                    <h4 class="text-primary-400 text-sm mb-2">& Insured</h4>
+                    <p class="text-gray-400 text-sm">Built with quality, backed by experience.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="flex flex-col items-center">
+                    <img src="assets/icon-family.svg" alt="Family-Owned" class="w-12 h-12 mb-4 feature-icon">
+                    <h3 class="font-semibold text-lg mb-1">Family-Owned</h3>
+                    <h4 class="text-primary-400 text-sm mb-2">& Operated</h4>
+                    <p class="text-gray-400 text-sm">Remodeling homes as if they were our own.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="flex flex-col items-center">
+                    <img src="assets/icon-quality.svg" alt="No Cutting Corners" class="w-12 h-12 mb-4 feature-icon">
+                    <h3 class="font-semibold text-lg mb-1">No Cutting</h3>
+                    <h4 class="text-primary-400 text-sm mb-2">Corners</h4>
+                    <p class="text-gray-400 text-sm">Advanced, reliable construction techniques for lasting results.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="flex flex-col items-center">
+                    <img src="assets/icon-location.svg" alt="Service Areas" class="w-12 h-12 mb-4 feature-icon">
+                    <h3 class="font-semibold text-lg mb-1">Serving the Bay Area</h3>
+                    <h4 class="text-primary-400 text-sm mb-2">& Orange County</h4>
+                    <p class="text-gray-400 text-sm">Local expertise focusing on your community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trust Logos Bar -->
+    <section class="py-8 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <h3 class="font-display text-xl md:text-2xl font-bold text-dark-900 whitespace-nowrap flex-shrink-0">
+                    Trusted by hundreds<br class="md:hidden"> of San Jose homeowners
+                </h3>
+                <div class="logo-carousel flex-1 w-full md:w-auto">
+                    <div class="logo-carousel-track">
+                        <!-- First set of logos -->
+                        <div class="flex items-center gap-10 md:gap-14 px-6">
+                            <img src="assets/logo-bbb.svg" alt="BBB" class="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-erc-2024.png" alt="Best of 2024 Remodeling Contractor" class="h-10 md:h-12 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-google.svg" alt="Google" class="h-6 md:h-8 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-houzz.svg" alt="Houzz" class="h-6 md:h-8 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-buildzoom.png" alt="BuildZoom" class="h-5 md:h-6 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-yelp.svg" alt="Yelp" class="h-6 md:h-8 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                        </div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="flex items-center gap-10 md:gap-14 px-6">
+                            <img src="assets/logo-bbb.svg" alt="BBB" class="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-erc-2024.png" alt="Best of 2024 Remodeling Contractor" class="h-10 md:h-12 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-tumbtack.png" alt="Thumbtack" class="h-10 md:h-12 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-google.svg" alt="Google" class="h-6 md:h-8 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-houzz.svg" alt="Houzz" class="h-6 md:h-8 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-buildzoom.png" alt="BuildZoom" class="h-5 md:h-6 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                            <img src="assets/logo-yelp.svg" alt="Yelp" class="h-6 md:h-8 opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image -->
+                <div class="reveal img-zoom rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="assets/kitchen-sanjose.jpg" alt="Modern Kitchen Interior" class="w-full h-[500px] object-cover">
+                </div>
+                
+                <!-- Content -->
+                <div class="reveal">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-dark-900 mb-6">
+                        About Maison Remodeling
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Maison Remodeling is a full-service residential remodeling and renovation company specializing in high-quality construction, design, and property revitalization. We help homeowners, investors, and real estate professionals transform outdated or damaged properties into modern, functional, and high-value homes.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Our services include complete home renovations, kitchen and bathroom remodeling, flooring, painting, carpentry, structural upgrades, project management, and post-project warranty follow-ups.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        We handle every phase - from initial planning and budgeting to execution and final walkthrough - ensuring a smooth, transparent, and professional experience.
+                    </p>
+                    <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-dark-900 text-white rounded-full font-semibold hover:bg-primary-600 transition-all group">
+                        <svg class="w-5 h-5 text-primary-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        Book a Free Consultation
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-8 mt-20">
+                <div class="reveal text-center">
+                    <div class="text-5xl md:text-6xl font-display font-bold text-primary-500 mb-2">
+                        <span class="counter" data-target="500">0</span>+
+                    </div>
+                    <p class="text-gray-600 font-medium">Satisfied Clients</p>
+                </div>
+                <div class="reveal text-center">
+                    <div class="text-5xl md:text-6xl font-display font-bold text-primary-500 mb-2">
+                        <span class="counter" data-target="300">0</span>+
+                    </div>
+                    <p class="text-gray-600 font-medium">Completed Remodeling Projects</p>
+                </div>
+                <div class="reveal text-center">
+                    <div class="text-5xl md:text-6xl font-display font-bold text-primary-500 mb-2">
+                        <span class="counter" data-target="15">0</span>+
+                    </div>
+                    <p class="text-gray-600 font-medium">Years of Remodeling Expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark-900 mb-4">
+                    What Our Clients Say
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Reputation and our clients' voices matter to us. Don't just take our word for it - see what our clients have to say about our home remodeling company in San Jose.
+                </p>
+            </div>
+            
+            <!-- Google Reviews Badge -->
+            <div class="flex justify-center mb-12 reveal">
+                <div class="flex items-center gap-4 bg-white rounded-full px-6 py-3 shadow-lg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-6">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl font-bold text-dark-900">5.0</span>
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <span class="text-gray-500">Based on 20 reviews</span>
+                </div>
+            </div>
+            
+            <!-- Testimonial Cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card reveal bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white text-xl font-bold">H</div>
+                        <div>
+                            <h4 class="font-semibold text-dark-900">Heidi Dennis</h4>
+                            <p class="text-gray-500 text-sm">2 years ago</p>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-5 ml-auto">
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        "We had Maison Remodeling Group remodel our bathroom, laundry room and small bathroom. Roei was our project manager and was responsive, kind and professional throughout the entire process."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card reveal bg-white rounded-2xl p-8 shadow-lg" style="animation-delay: 0.1s">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center text-white text-xl font-bold">T</div>
+                        <div>
+                            <h4 class="font-semibold text-dark-900">T H</h4>
+                            <p class="text-gray-500 text-sm">2 years ago</p>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-5 ml-auto">
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        "I had a terrific experience with this company. They were a one stop shop for me for dry rot siding and fireplace, new deck and painting. I was given a detailed quote and timeline."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card reveal bg-white rounded-2xl p-8 shadow-lg" style="animation-delay: 0.2s">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gray-500 flex items-center justify-center text-white text-xl font-bold">A</div>
+                        <div>
+                            <h4 class="font-semibold text-dark-900">Alex M</h4>
+                            <p class="text-gray-500 text-sm">3 years ago</p>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-5 ml-auto">
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        "I hired OT Builders recently to replace the roof on our house in San Francisco. Omer was responsive, helpful, knowledgeable and a pleasure to work with from start to finish."
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="testimonials.html" class="inline-flex items-center gap-2 px-8 py-4 bg-dark-900 text-white rounded-full font-semibold hover:bg-primary-600 transition-all">
+                    <svg class="w-5 h-5 text-primary-400" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                    Read All Testimonials
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark-900 mb-4">
+                    Our Home Remodeling Services
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    We offer end-to-end remodeling solutions for homeowners throughout San Jose. Our experienced contractors work alongside trusted architects, interior designers, and project managers to create beautiful, functional spaces designed to last.
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <a href="home-remodeling.html" class="service-card reveal relative bg-white rounded-2xl overflow-hidden shadow-lg group">
+                    <div class="img-zoom h-64">
+                        <img src="assets/home-losaltos-1.jpg" alt="Full Home Remodeling" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Full Home Remodeling</h3>
+                        <p class="text-gray-300 text-sm mb-4">Complete home transformations from top to bottom.</p>
+                        <span class="inline-flex items-center gap-2 text-primary-400 font-medium group-hover:gap-4 transition-all">
+                            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <!-- Service 2 -->
+                <a href="kitchen-remodeling.html" class="service-card reveal relative bg-white rounded-2xl overflow-hidden shadow-lg group" style="animation-delay: 0.1s">
+                    <div class="img-zoom h-64">
+                        <img src="assets/kitchen-hayward.jpg" alt="Kitchen Remodeling" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Kitchen Remodeling</h3>
+                        <p class="text-gray-300 text-sm mb-4">Design and build the kitchen of your dreams.</p>
+                        <span class="inline-flex items-center gap-2 text-primary-400 font-medium group-hover:gap-4 transition-all">
+                            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <!-- Service 3 -->
+                <a href="bathroom-remodeling.html" class="service-card reveal relative bg-white rounded-2xl overflow-hidden shadow-lg group" style="animation-delay: 0.2s">
+                    <div class="img-zoom h-64">
+                        <img src="assets/bathroom-losaltos-1.jpg" alt="Bathroom Remodeling" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Bathroom Remodeling</h3>
+                        <p class="text-gray-300 text-sm mb-4">Transform your bathroom into a spa-like retreat.</p>
+                        <span class="inline-flex items-center gap-2 text-primary-400 font-medium group-hover:gap-4 transition-all">
+                            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <!-- Service 4 -->
+                <a href="home-additions.html" class="service-card reveal relative bg-white rounded-2xl overflow-hidden shadow-lg group" style="animation-delay: 0.3s">
+                    <div class="img-zoom h-64">
+                        <img src="assets/home-losaltos-2.jpg" alt="Home Additions" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Home Additions</h3>
+                        <p class="text-gray-300 text-sm mb-4">Expand your living space with custom additions.</p>
+                        <span class="inline-flex items-center gap-2 text-primary-400 font-medium group-hover:gap-4 transition-all">
+                            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <!-- Service 5 -->
+                <a href="adu.html" class="service-card reveal relative bg-white rounded-2xl overflow-hidden shadow-lg group" style="animation-delay: 0.4s">
+                    <div class="img-zoom h-64">
+                        <img src="assets/adu-1.jpg" alt="ADU Builders" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">ADU Builders</h3>
+                        <p class="text-gray-300 text-sm mb-4">Accessory Dwelling Units for extra income or family.</p>
+                        <span class="inline-flex items-center gap-2 text-primary-400 font-medium group-hover:gap-4 transition-all">
+                            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <!-- Service 6 -->
+                <a href="exterior-remodeling.html" class="service-card reveal relative bg-white rounded-2xl overflow-hidden shadow-lg group" style="animation-delay: 0.5s">
+                    <div class="img-zoom h-64">
+                        <img src="assets/exterior-1.jpg" alt="Exterior Remodeling" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Exterior Remodeling</h3>
+                        <p class="text-gray-300 text-sm mb-4">Enhance your home's curb appeal and protection.</p>
+                        <span class="inline-flex items-center gap-2 text-primary-400 font-medium group-hover:gap-4 transition-all">
+                            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- More Services -->
+            <div class="grid md:grid-cols-3 gap-8 mt-8">
+                <a href="custom-homes.html" class="reveal flex items-center gap-4 p-6 bg-gray-50 rounded-xl hover:bg-primary-50 transition-all group">
+                    <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center group-hover:bg-primary-500 transition-all">
+                        <i data-lucide="home" class="w-6 h-6 text-primary-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-dark-900 group-hover:text-primary-600 transition-colors">Custom Homes</h4>
+                        <p class="text-gray-500 text-sm">Build your dream from scratch</p>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-gray-400 ml-auto group-hover:text-primary-600 transition-colors"></i>
+                </a>
+                
+                <a href="commercial-remodeling.html" class="reveal flex items-center gap-4 p-6 bg-gray-50 rounded-xl hover:bg-primary-50 transition-all group" style="animation-delay: 0.1s">
+                    <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center group-hover:bg-primary-500 transition-all">
+                        <i data-lucide="building-2" class="w-6 h-6 text-primary-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-dark-900 group-hover:text-primary-600 transition-colors">Commercial Remodeling</h4>
+                        <p class="text-gray-500 text-sm">Transform your business space</p>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-gray-400 ml-auto group-hover:text-primary-600 transition-colors"></i>
+                </a>
+                
+                <a href="design-build.html" class="reveal flex items-center gap-4 p-6 bg-gray-50 rounded-xl hover:bg-primary-50 transition-all group" style="animation-delay: 0.2s">
+                    <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center group-hover:bg-primary-500 transition-all">
+                        <i data-lucide="pencil-ruler" class="w-6 h-6 text-primary-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-dark-900 group-hover:text-primary-600 transition-colors">Design Build</h4>
+                        <p class="text-gray-500 text-sm">One team from concept to completion</p>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-gray-400 ml-auto group-hover:text-primary-600 transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="py-24 bg-dark-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <img src="assets/home-losgatos.jpg" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">
+                    Our Remodeling Process
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    A streamlined approach to bring your vision to life with minimal stress and maximum quality.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="reveal text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary-500 flex items-center justify-center text-3xl font-display font-bold text-white">1</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Consultation</h3>
+                    <p class="text-gray-400">We discuss your vision, needs, and budget to create a tailored plan.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="reveal text-center" style="animation-delay: 0.1s">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary-500 flex items-center justify-center text-3xl font-display font-bold text-white">2</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Design & Planning</h3>
+                    <p class="text-gray-400">Our team creates detailed designs and handles all permits.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="reveal text-center" style="animation-delay: 0.2s">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary-500 flex items-center justify-center text-3xl font-display font-bold text-white">3</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Construction</h3>
+                    <p class="text-gray-400">Expert craftsmen bring your project to life with daily updates.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="reveal text-center" style="animation-delay: 0.3s">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary-500 flex items-center justify-center text-3xl font-display font-bold text-white">4</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Final Walkthrough</h3>
+                    <p class="text-gray-400">We ensure every detail meets your expectations before handover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Gallery Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark-900 mb-4">
+                    Featured Projects
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Explore our portfolio of stunning home transformations across the Bay Area.
+                </p>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="projects/kitchen-remodeling.html" class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group relative">
+                    <img src="assets/kitchen-grey-cabinets.jpg" alt="Kitchen Remodeling Project" class="w-full h-80 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white">Kitchen Remodeling</h3>
+                            <p class="text-gray-300">San Jose, CA</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="projects/bathroom-remodeling.html" class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group relative" style="animation-delay: 0.1s">
+                    <img src="assets/bathroom-losaltos-1.jpg" alt="Bathroom Remodeling Project" class="w-full h-80 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white">Bathroom Remodeling</h3>
+                            <p class="text-gray-300">Santa Clara, CA</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="projects/complete-home-remodeling.html" class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group relative" style="animation-delay: 0.2s">
+                    <img src="assets/home-losaltos-1.jpg" alt="Complete Home Remodeling" class="w-full h-80 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white">Complete Home Remodeling</h3>
+                            <p class="text-gray-300">Milpitas, CA</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="projects/condo-remodeling.html" class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group relative" style="animation-delay: 0.3s">
+                    <img src="assets/condo-paloalto.jpg" alt="Condo Remodeling" class="w-full h-80 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white">Condo Remodeling</h3>
+                            <p class="text-gray-300">San Francisco, CA</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="projects/outdoor-remodeling.html" class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group relative" style="animation-delay: 0.4s">
+                    <img src="assets/backyard-saratoga.jpg" alt="Outdoor Remodeling" class="w-full h-80 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white">Outdoor Remodeling</h3>
+                            <p class="text-gray-300">Palo Alto, CA</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="projects.html" class="reveal flex items-center justify-center bg-primary-50 rounded-2xl h-80 group hover:bg-primary-100 transition-colors" style="animation-delay: 0.5s">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="plus" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-600">View All Projects</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="assets/bathroom-4.jpg" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark-900/90"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4 text-center">
+            <h2 class="reveal font-display text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Home?
+            </h2>
+            <p class="reveal text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
+                Get started with a free consultation. Our team will help you plan your dream project within your budget.
+            </p>
+            <div class="reveal flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-500 text-white rounded-full text-lg font-semibold hover:bg-primary-600 transition-all">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                    Get a Free Estimate
+                </a>
+                <a href="tel:408-766-7272" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-dark-900 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    Call 408-766-7272
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <!-- Logo & Contact -->
+                <div class="lg:col-span-2">
+                    <img src="assets/new_logo.png" alt="Maison Remodeling Group" class="h-12 mb-6">
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Get in Touch</h3>
+                    <div class="space-y-3">
+                        <a href="tel:408-766-7272" class="flex items-center gap-3 text-gray-300 hover:text-primary-400 transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            408-766-7272
+                        </a>
+                        <a href="mailto:info@maisonrg.com" class="flex items-center gap-3 text-gray-300 hover:text-primary-400 transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            info@maisonrg.com
+                        </a>
+                        <div class="flex items-start gap-3 text-gray-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 mt-1"></i>
+                            <span>Showroom & Office located at San Jose<br>1580 Oakland Rd, STE C106,<br>San Jose, CA 95131</span>
+                        </div>
+                        <div class="flex items-start gap-3 text-gray-300">
+                            <i data-lucide="clock" class="w-5 h-5 mt-1"></i>
+                            <span>
+                                <strong>Business Hours:</strong><br>
+                                Mon - Fri: 9am - 6pm<br>
+                                Sat, Sun: Closed
+                            </span>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Home Remodeling</a></li>
+                        <li><a href="kitchen-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Kitchen Remodeling</a></li>
+                        <li><a href="bathroom-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Bathroom Remodeling</a></li>
+                        <li><a href="home-additions.html" class="text-gray-300 hover:text-primary-400 transition-colors">Home Addition</a></li>
+                        <li><a href="adu.html" class="text-gray-300 hover:text-primary-400 transition-colors">ADU Builders</a></li>
+                        <li><a href="exterior-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Exterior Remodeling</a></li>
+                        <li><a href="custom-homes.html" class="text-gray-300 hover:text-primary-400 transition-colors">Custom Homes</a></li>
+                        <li><a href="commercial-remodeling.html" class="text-gray-300 hover:text-primary-400 transition-colors">Commercial Remodeling</a></li>
+                        <li><a href="design-build.html" class="text-gray-300 hover:text-primary-400 transition-colors">Design Build</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Service Areas -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Service Areas</h3>
+                    <ul class="space-y-2">
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">San Jose</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Santa Clara</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Milpitas</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Laguna Beach</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Santa Ana</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Laguna Woods</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">Villa Park</a></li>
+                        <li><a href="locations.html" class="text-gray-300 hover:text-primary-400 transition-colors">San Mateo</a></li>
+                        <li><a href="locations.html" class="text-primary-400 hover:text-primary-300 transition-colors font-medium">More Locations</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary-400">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-300 hover:text-primary-400 transition-colors">About Us</a></li>
+                        <li><a href="projects.html" class="text-gray-300 hover:text-primary-400 transition-colors">Our Projects</a></li>
+                        <li><a href="products.html" class="text-gray-300 hover:text-primary-400 transition-colors">Products</a></li>
+                        <li><a href="blog.html" class="text-gray-300 hover:text-primary-400 transition-colors">Blog</a></li>
+                        <li><a href="testimonials.html" class="text-gray-300 hover:text-primary-400 transition-colors">Testimonials</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-primary-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">Maison Remodeling Group &copy; 2025 All Rights Reserved. | License #1097881</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="text-gray-400 text-sm hover:text-primary-400 transition-colors">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="text-gray-400 text-sm hover:text-primary-400 transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-24 lg:bottom-8 right-8 w-12 h-12 bg-primary-500 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all hover:bg-primary-600 z-50">
+        <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </button>
+    
+    <!-- Sticky Mobile CTA -->
+    <div id="mobile-cta" class="fixed bottom-0 left-0 right-0 bg-dark-900 border-t border-gray-800 p-3 lg:hidden z-40 transform translate-y-full transition-transform duration-300">
+        <div class="flex gap-2 max-w-lg mx-auto">
+            <a href="tel:408-766-7272" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white text-dark-900 rounded-full font-semibold text-sm">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                Call Now
+            </a>
+            <a href="contact.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-primary-500 text-white rounded-full font-semibold text-sm">
+                Free Consultation
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+            
+            updateCounter();
+        };
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counters.forEach(counter => counterObserver.observe(counter));
+        
+        // Back to top button and mobile CTA
+        const backToTop = document.getElementById('back-to-top');
+        const mobileCta = document.getElementById('mobile-cta');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+                if (mobileCta) mobileCta.classList.remove('translate-y-full');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+                if (mobileCta) mobileCta.classList.add('translate-y-full');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Three.js Hero Animation with Entrance Effects
+        const canvas = document.getElementById('hero-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        
+        // Particle system configuration
+        const particleGroups = [];
+        const particleConfigs = [
+            { count: 1500, size: 0.015, color: 0xc9922b, speed: 1.2, opacity: 0.9 },
+            { count: 1000, size: 0.008, color: 0xe5b03d, speed: 0.8, opacity: 0.6 },
+            { count: 2000, size: 0.004, color: 0xffffff, speed: 0.5, opacity: 0.4 }
+        ];
+        
+        // Create multiple particle layers
+        particleConfigs.forEach((config, index) => {
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(config.count * 3);
+            const velocities = new Float32Array(config.count * 3);
+            const initialPositions = new Float32Array(config.count * 3);
+            
+            for (let i = 0; i < config.count; i++) {
+                const i3 = i * 3;
+                // Target positions (spread out)
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos(2 * Math.random() - 1);
+                const radius = 3 + Math.random() * 4;
+                
+                initialPositions[i3] = radius * Math.sin(phi) * Math.cos(theta);
+                initialPositions[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+                initialPositions[i3 + 2] = radius * Math.cos(phi);
+                
+                // Start from center (for entrance animation)
+                positions[i3] = 0;
+                positions[i3 + 1] = 0;
+                positions[i3 + 2] = 0;
+                
+                // Random velocities for continuous movement
+                velocities[i3] = (Math.random() - 0.5) * 0.02;
+                velocities[i3 + 1] = (Math.random() - 0.5) * 0.02;
+                velocities[i3 + 2] = (Math.random() - 0.5) * 0.02;
+            }
+            
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            
+            const material = new THREE.PointsMaterial({
+                size: config.size,
+                color: config.color,
+                transparent: true,
+                opacity: 0,
+                blending: THREE.AdditiveBlending,
+                depthWrite: false
+            });
+            
+            const particles = new THREE.Points(geometry, material);
+            particles.userData = {
+                initialPositions,
+                velocities,
+                config,
+                entranceProgress: 0
+            };
+            
+            scene.add(particles);
+            particleGroups.push(particles);
+        });
+        
+        // Create floating geometric shapes
+        const shapes = [];
+        const shapeCount = 5;
+        
+        for (let i = 0; i < shapeCount; i++) {
+            let geometry;
+            const shapeType = i % 3;
+            
+            if (shapeType === 0) {
+                geometry = new THREE.OctahedronGeometry(0.3 + Math.random() * 0.3, 0);
+            } else if (shapeType === 1) {
+                geometry = new THREE.TetrahedronGeometry(0.25 + Math.random() * 0.25, 0);
+            } else {
+                geometry = new THREE.IcosahedronGeometry(0.2 + Math.random() * 0.2, 0);
+            }
+            
+            const edges = new THREE.EdgesGeometry(geometry);
+            const material = new THREE.LineBasicMaterial({
+                color: 0xc9922b,
+                transparent: true,
+                opacity: 0
+            });
+            
+            const wireframe = new THREE.LineSegments(edges, material);
+            wireframe.position.set(
+                (Math.random() - 0.5) * 8,
+                (Math.random() - 0.5) * 4,
+                (Math.random() - 0.5) * 3 - 2
+            );
+            wireframe.userData = {
+                rotationSpeed: {
+                    x: (Math.random() - 0.5) * 0.02,
+                    y: (Math.random() - 0.5) * 0.02,
+                    z: (Math.random() - 0.5) * 0.01
+                },
+                floatOffset: Math.random() * Math.PI * 2,
+                floatSpeed: 0.5 + Math.random() * 0.5,
+                initialY: wireframe.position.y,
+                entranceDelay: i * 0.15
+            };
+            wireframe.scale.set(0, 0, 0);
+            
+            scene.add(wireframe);
+            shapes.push(wireframe);
+        }
+        
+        // Create connecting lines between particles
+        const lineGeometry = new THREE.BufferGeometry();
+        const linePositions = new Float32Array(200 * 3);
+        lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+        const lineMaterial = new THREE.LineBasicMaterial({
+            color: 0xc9922b,
+            transparent: true,
+            opacity: 0
+        });
+        const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+        scene.add(lines);
+        
+        camera.position.z = 5;
+        
+        // Animation timing
+        const startTime = Date.now();
+        const entranceDuration = 2500; // 2.5 seconds
+        
+        // Mouse tracking with smooth interpolation
+        let mouseX = 0, mouseY = 0;
+        let targetMouseX = 0, targetMouseY = 0;
+        
+        document.addEventListener('mousemove', (event) => {
+            targetMouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            targetMouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
+        
+        // Easing functions
+        const easeOutExpo = (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        const easeOutElastic = (t) => {
+            const c4 = (2 * Math.PI) / 3;
+            return t === 0 ? 0 : t === 1 ? 1 : Math.pow(2, -10 * t) * Math.sin((t * 10 - 0.75) * c4) + 1;
+        };
+        const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        
+        // Animation loop
+        const animate = () => {
+            requestAnimationFrame(animate);
+            
+            const elapsed = Date.now() - startTime;
+            const entranceProgress = Math.min(elapsed / entranceDuration, 1);
+            const easedProgress = easeOutExpo(entranceProgress);
+            
+            // Smooth mouse following
+            mouseX += (targetMouseX - mouseX) * 0.05;
+            mouseY += (targetMouseY - mouseY) * 0.05;
+            
+            // Animate particle groups
+            particleGroups.forEach((particles, groupIndex) => {
+                const positions = particles.geometry.attributes.position.array;
+                const { initialPositions, velocities, config } = particles.userData;
+                const delay = groupIndex * 0.1;
+                const groupProgress = Math.max(0, Math.min((entranceProgress - delay) / (1 - delay), 1));
+                const groupEased = easeOutExpo(groupProgress);
+                
+                // Fade in
+                particles.material.opacity = groupEased * config.opacity;
+                
+                // Move particles from center to final positions
+                for (let i = 0; i < positions.length; i += 3) {
+                    // Interpolate to target position
+                    positions[i] = initialPositions[i] * groupEased;
+                    positions[i + 1] = initialPositions[i + 1] * groupEased;
+                    positions[i + 2] = initialPositions[i + 2] * groupEased;
+                    
+                    // Add continuous floating movement after entrance
+                    if (entranceProgress >= 1) {
+                        const time = elapsed * 0.001;
+                        positions[i] += Math.sin(time + i) * velocities[i];
+                        positions[i + 1] += Math.cos(time + i) * velocities[i + 1];
+                        positions[i + 2] += Math.sin(time * 0.5 + i) * velocities[i + 2];
+                    }
+                }
+                
+                particles.geometry.attributes.position.needsUpdate = true;
+                
+                // Rotate based on mouse and time
+                particles.rotation.x += 0.0003 * config.speed + mouseY * 0.0003;
+                particles.rotation.y += 0.0005 * config.speed + mouseX * 0.0003;
+            });
+            
+            // Animate geometric shapes
+            shapes.forEach((shape) => {
+                const { rotationSpeed, floatOffset, floatSpeed, initialY, entranceDelay } = shape.userData;
+                const shapeProgress = Math.max(0, Math.min((entranceProgress - entranceDelay) / (1 - entranceDelay), 1));
+                const shapeEased = easeOutElastic(shapeProgress);
+                
+                // Scale up with elastic effect
+                shape.scale.setScalar(shapeEased);
+                
+                // Fade in
+                shape.material.opacity = shapeProgress * 0.5;
+                
+                // Continuous rotation
+                shape.rotation.x += rotationSpeed.x;
+                shape.rotation.y += rotationSpeed.y;
+                shape.rotation.z += rotationSpeed.z;
+                
+                // Floating animation
+                const time = elapsed * 0.001;
+                shape.position.y = initialY + Math.sin(time * floatSpeed + floatOffset) * 0.3;
+                
+                // Subtle mouse interaction
+                shape.position.x += mouseX * 0.003;
+                shape.position.y += mouseY * 0.003;
+            });
+            
+            // Animate connecting lines
+            lineMaterial.opacity = easedProgress * 0.15;
+            
+            // Camera subtle movement
+            camera.position.x = mouseX * 0.3;
+            camera.position.y = mouseY * 0.2;
+            camera.lookAt(0, 0, 0);
+            
+            renderer.render(scene, camera);
+        };
+        
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // GSAP ScrollTrigger animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Parallax effect for hero
+        gsap.to('#hero img', {
+            yPercent: 30,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

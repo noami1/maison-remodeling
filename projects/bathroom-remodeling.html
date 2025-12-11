@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bathroom Remodeling Projects | Maison Remodeling Group - San Jose</title>
+    <meta name="description" content="Explore our stunning bathroom remodeling projects in San Jose and the Bay Area. Luxury bathrooms, modern designs, and expert craftsmanship.">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { primary: { 50: '#fdf9ed', 100: '#f9eecd', 400: '#e5b03d', 500: '#c9922b', 600: '#a06f22' }, dark: { 900: '#1a1a1a', 800: '#2d2d2d', 700: '#404040' } }, fontFamily: { 'display': ['Playfair Display', 'serif'] } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .img-zoom { overflow: hidden; }
+        .img-zoom img { transition: transform 0.5s ease; }
+        .img-zoom:hover img { transform: scale(1.1); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #c9922b; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+        .dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.4s; }
+        .mobile-menu.active { transform: translateX(0); }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Top Bar -->
+    <div class="bg-dark-900 text-white py-2 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-primary-500"></i>
+                Licensed, Bonded & Insured #1097881
+            </span>
+            <a href="tel:408-766-7272" class="flex items-center gap-2 hover:text-primary-400 transition-colors" title="We Answer Fast!">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="flex items-center gap-3">
+                    <img src="../assets/new_logo.png" alt="Maison Remodeling Group" class="h-12">
+                </a>
+                
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="../index.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Home</a>
+                    <a href="../about.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">About</a>
+                    
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Services
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="../home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Full Home Remodeling</a>
+                            <a href="../kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="../bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="../home-additions.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Home Additions</a>
+                            <a href="../adu.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">ADU Builders</a>
+                            <a href="../exterior-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Exterior Remodeling</a>
+                            <a href="../custom-homes.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Custom Homes</a>
+                            <a href="../commercial-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Commercial Remodeling</a>
+                            <a href="../design-build.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Design Build</a>
+                        </div>
+                    </div>
+                    
+                    <a href="../products.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Products</a>
+                    
+                    <div class="dropdown relative">
+                        <button class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors flex items-center gap-1">
+                            Projects
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-3 z-50">
+                            <a href="../projects.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">All Projects</a>
+                            <a href="bathroom-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Bathroom Remodeling</a>
+                            <a href="kitchen-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Kitchen Remodeling</a>
+                            <a href="complete-home-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Complete Home Remodeling</a>
+                            <a href="condo-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Condo Remodeling</a>
+                            <a href="outdoor-remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Outdoor Remodeling</a>
+                        </div>
+                    </div>
+                    
+                    <a href="../blog.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Blog</a>
+                    <a href="../contact.html" class="nav-link text-dark-900 font-medium hover:text-primary-600 transition-colors">Contact Us</a>
+                </div>
+                
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:408-766-7272" class="flex items-center gap-2 px-4 py-2 border-2 border-dark-900 rounded-full text-dark-900 font-medium hover:bg-dark-900 hover:text-white transition-all">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        408-766-7272
+                    </a>
+                    <a href="../contact.html" class="flex items-center gap-2 px-6 py-2 bg-dark-900 text-white rounded-full font-medium hover:bg-primary-600 transition-all group">
+                        <svg class="w-5 h-5 text-primary-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        Book Free Consultation
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-dark-900">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-dark-900 z-50 p-6 lg:hidden">
+        <div class="flex justify-between items-center mb-8">
+            <img src="../assets/new_logo.png" alt="Maison Remodeling" class="h-10">
+            <button id="mobile-menu-close" class="text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="space-y-4">
+            <a href="../index.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home</a>
+            <a href="../about.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">About</a>
+            <a href="../kitchen-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Kitchen Remodeling</a>
+            <a href="../bathroom-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Bathroom Remodeling</a>
+            <a href="../home-remodeling.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Home Remodeling</a>
+            <a href="../adu.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">ADU</a>
+            <a href="../products.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Products</a>
+            <a href="../projects.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Projects</a>
+            <a href="../testimonials.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Testimonials</a>
+            <a href="../blog.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Blog</a>
+            <a href="../contact.html" class="block text-white text-lg font-medium py-2 border-b border-gray-700">Contact Us</a>
+        </nav>
+        <div class="mt-8">
+            <a href="tel:408-766-7272" class="flex items-center gap-2 text-primary-400 text-lg font-medium">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+                408-766-7272
+            </a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="../assets/bathroom-losaltos-1.jpg" alt="Bathroom Remodeling Projects" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark-900/70"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <nav class="text-gray-300 mb-4">
+                <a href="../index.html" class="hover:text-primary-400">Home</a> / 
+                <a href="../projects.html" class="hover:text-primary-400">Projects</a> / 
+                <span class="text-white">Bathroom Remodeling</span>
+            </nav>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-white font-bold">Bathroom Remodeling Projects</h1>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Explore our bathroom remodeling projects. From spa-like master bathrooms to elegant powder rooms, we create beautiful and functional spaces.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group">
+                    <img src="../assets/bathroom-losaltos-1.jpg" alt="Luxury Bathroom Los Altos" class="w-full h-72 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-dark-900">Luxury Master Bath</h3>
+                        <p class="text-gray-500 text-sm">Los Altos, CA</p>
+                    </div>
+                </div>
+                <div class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group">
+                    <img src="../assets/bathroom-losaltos-3.jpg" alt="Modern Bathroom" class="w-full h-72 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-dark-900">Modern Walk-In Shower</h3>
+                        <p class="text-gray-500 text-sm">Los Altos, CA</p>
+                    </div>
+                </div>
+                <div class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group">
+                    <img src="../assets/bathroom-santaclara.jpg" alt="Bathroom Santa Clara" class="w-full h-72 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-dark-900">Contemporary Bathroom</h3>
+                        <p class="text-gray-500 text-sm">Santa Clara, CA</p>
+                    </div>
+                </div>
+                <div class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group">
+                    <img src="../assets/bathroom-losaltos-1.jpg" alt="Spa Bathroom" class="w-full h-72 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-dark-900">Spa-Style Retreat</h3>
+                        <p class="text-gray-500 text-sm">Sunnyvale, CA</p>
+                    </div>
+                </div>
+                <div class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group">
+                    <img src="../assets/bathroom-losaltos-3.jpg" alt="Guest Bathroom" class="w-full h-72 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-dark-900">Guest Bathroom Renovation</h3>
+                        <p class="text-gray-500 text-sm">San Jose, CA</p>
+                    </div>
+                </div>
+                <div class="reveal img-zoom rounded-2xl overflow-hidden shadow-lg group">
+                    <img src="../assets/bathroom-santaclara.jpg" alt="Primary Bathroom" class="w-full h-72 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-dark-900">Primary Bath Remodel</h3>
+                        <p class="text-gray-500 text-sm">Campbell, CA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary-500">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="reveal font-display text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Bathroom?</h2>
+            <p class="reveal text-white/90 text-lg mb-8">Get started with a free consultation and estimate for your bathroom remodel.</p>
+            <div class="reveal flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../contact.html" class="px-8 py-4 bg-white text-dark-900 rounded-full font-semibold hover:bg-dark-900 hover:text-white transition-all">Get a Free Estimate</a>
+                <a href="tel:408-766-7272" class="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-dark-900 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    408-766-7272
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="../assets/new_logo.png" alt="Maison Remodeling Group" class="h-10 mb-4">
+                    <p class="text-gray-400 text-sm">Quality home remodeling in San Jose and the Bay Area.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-primary-400 mb-4">Contact</h4>
+                    <p class="text-gray-300 text-sm">408-766-7272</p>
+                    <p class="text-gray-300 text-sm">info@maisonrg.com</p>
+                    <p class="text-gray-300 text-sm mt-2">1580 Oakland Rd, STE C106<br>San Jose, CA 95131</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-primary-400 mb-4">Services</h4>
+                    <a href="../kitchen-remodeling.html" class="block text-gray-300 text-sm hover:text-primary-400">Kitchen Remodeling</a>
+                    <a href="../bathroom-remodeling.html" class="block text-gray-300 text-sm hover:text-primary-400">Bathroom Remodeling</a>
+                    <a href="../home-remodeling.html" class="block text-gray-300 text-sm hover:text-primary-400">Home Remodeling</a>
+                    <a href="../adu.html" class="block text-gray-300 text-sm hover:text-primary-400">ADU Builders</a>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-primary-400 mb-4">Quick Links</h4>
+                    <a href="../projects.html" class="block text-gray-300 text-sm hover:text-primary-400">Projects</a>
+                    <a href="../blog.html" class="block text-gray-300 text-sm hover:text-primary-400">Blog</a>
+                    <a href="../contact.html" class="block text-gray-300 text-sm hover:text-primary-400">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">Maison Remodeling Group &copy; 2025 All Rights Reserved. | License #1097881</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.add('active'));
+        document.getElementById('mobile-menu-close').addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('active'));
+        const revealElements = document.querySelectorAll('.reveal');
+        window.addEventListener('scroll', () => { revealElements.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active'); }); });
+        window.addEventListener('load', () => { revealElements.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active'); }); });
+    </script>
+</body>
+</html>
